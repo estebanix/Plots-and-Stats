@@ -8,7 +8,7 @@ def calculate_percentage_portion(df, group_by_var=None, continuous_var=None, thr
     percentages = {}
 
     if group_by_var:  # Only group if a variable is provided
-        groups = df.groupby(group_by_var)
+        groups = df.groupby(group_by_var, observed=False)
         for name, group in groups:
             count_all = len(group)
             count_above_threshold = (group[continuous_var] > thr).sum()
@@ -32,7 +32,7 @@ def percentage_portion_distribution_kde(df, target_variable, grouping_variable=N
         df[grouping_variable] = pd.Categorical(df[grouping_variable], categories=unique_dating_values, ordered=True)
 
     joyplot(
-        data=df, 
+        data=df.groupby(grouping_variable, observed=False), 
         by=grouping_variable if grouping_variable else None, 
         column=target_variable, 
         colormap=cm.coolwarm,
