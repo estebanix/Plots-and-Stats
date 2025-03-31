@@ -1,1 +1,54 @@
+# Byte-compiled / optimized / DLL files
 __pycache__/
+*.py[cod]
+*.so
+*.dll
+*.dylib
+*.pyd
+
+# Virtual environment
+venv/
+.env/
+.venv/
+env/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Logs and database
+*.log
+*.sqlite3
+*.db
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor / IDE-specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python-specific ignores
+*.pyo
+*.pyc
+
+# Large data files
+*.csv
+*.xlsx
+*.json
+
+# Environment variables / credentials
+config.json
+.env
+
+# Ignore any temporary files
+*.tmp
+*.bak
